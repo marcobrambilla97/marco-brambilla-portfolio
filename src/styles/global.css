@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/PPNeueMontreal-Thin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/PPNeueMontreal-Book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/PPNeueMontreal-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "PPNeueMontreal";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/PPNeueMontreal-Bold.otf") format("opentype");
+}
+
+:root {
+  --size: 390;
+}
+
+@media screen and (min-width: 640px) {
+  :root {
+    --size: 1500;
+  }
+
+  html {
+    position: relative;
+    font-size: clamp(1px, 12px,   10*100vw/390);
+    font-size: clamp(1px, 12px, 10*100vw/var(--size))
+  }
+
+  body {
+    font-size: 1.7rem;
+  }
+}
+
+body {
+  font-family: "PPNeueMontreal", Arial, Helvetica, sans-serif;
+  background-color: transparent;
+  color: #1a1a1a;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+sup {
+  top: 0;
+  vertical-align: top;
+}
+
+.dark body {
+  background-color: #000000;
+  color: #F9F9F9;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+@media screen and (min-width: 640px) {
+  .screen-reader-text-mobile {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+}
+
+.line-split>span {
+  display: inline-block;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
