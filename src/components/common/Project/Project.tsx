@@ -68,7 +68,7 @@ const Project = ({
         {terms?.map((term) => (
           <span
             key={term.id}
-            className="block text-color-secondary text-base mb-2 sm:mb-4 sm:text-2xl"
+            className="block text-color-secondary dark:text-white/70 text-base mb-2 sm:mb-4 sm:text-2xl"
           >
             {term.name}
           </span>

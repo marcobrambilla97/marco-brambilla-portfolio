@@ -178,5 +178,5 @@ export const homePageQuery = graphql`
 export default HomePageTemplate;
 
 export function Head({ pageContext }: { pageContext: IPageContext }) {
-  return <html lang={pageContext.currentLocale} />;
+  return <html lang={pageContext.currentLang?.toLowerCase()} />;
 }

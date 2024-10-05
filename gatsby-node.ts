@@ -141,7 +141,7 @@ exports.onCreatePage = async ({
     // Set the context with the correct language
     page.context = {
       ...page.context, // Preserve any existing context
-      currentLang: langCode === "en" ? `${langCode}_US` : langCode,
+      currentLang: langCode,
     };
 
     // Match all paths starting with this language code
@@ -167,7 +167,7 @@ exports.onCreatePage = async ({
     // Set a default language for the main 404 page
     page.context = {
       ...page.context,
-      currentLang: "it_IT", // Or whichever language you want as default
+      currentLang: "it", // Or whichever language you want as default
     };
 
     // Recreate the modified page

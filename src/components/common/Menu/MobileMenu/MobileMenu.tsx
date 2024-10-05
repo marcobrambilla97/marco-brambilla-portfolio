@@ -30,7 +30,7 @@ const MobileMenu = ({
           translations={translations}
         />
         <MainMenu currentUri={currentUri} menuItems={menuItems} />
-        <Switch toggled={darkMode} onClick={onToggleDarkMode} />
+        <Switch toggled={darkMode} ariaLabel="Toggle dark mode" onClick={onToggleDarkMode} />
       </div>
     </div>
   );

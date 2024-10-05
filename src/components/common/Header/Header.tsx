@@ -70,7 +70,11 @@ const Header = ({
               translations={translations}
             />
             <DesktopMenu menuItems={menuItems} />
-            <Switch toggled={darkMode} onClick={handleToggleDarkMode} />
+            <Switch
+              toggled={darkMode}
+              ariaLabel="Toggle dark mode"
+              onClick={handleToggleDarkMode}
+            />
           </div>
         )}
         {!isDesktop && (
