@@ -16,7 +16,7 @@ const LanguageSwitcher = ({ currentLang, translations }: IPageLangProps) => {
         <ul className="sm:mr-[14rem]">
           {availableLang?.map((language: IWpPageQuery) => (
             <li key={language.language.code}>
-              <Link to={language.uri} className="py-3 mb-3 block sm:py-0">
+              <Link to={language.uri} className="py-3 mb-3 block sm:py-0 sm:mb-0">
                 <span className="visible sm:hidden">{spanText}</span>{" "}
                 {language.language.name}
               </Link>

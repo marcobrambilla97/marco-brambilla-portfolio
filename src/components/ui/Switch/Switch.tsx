@@ -2,10 +2,11 @@ import React from "react";
 
 interface IDarkModeSwitchProps {
   toggled: boolean;
+  ariaLabel?: string;
   onClick: () => void;
 }
 
-const Switch = ({ toggled, onClick }: IDarkModeSwitchProps) => {
+const Switch = ({ toggled, ariaLabel, onClick }: IDarkModeSwitchProps) => {
   const handleClick = () => {
     onClick();
   };
@@ -14,6 +15,7 @@ const Switch = ({ toggled, onClick }: IDarkModeSwitchProps) => {
     <div
       role="switch"
       aria-checked={toggled}
+      aria-label={ariaLabel}
       tabIndex={0}
       className="switch group flex flex-col justify-end gap-3 cursor-pointer absolute bottom-12 left-1/2 -translate-x-1/2 sm:static sm:block sm:mt-0"
       onClick={handleClick}

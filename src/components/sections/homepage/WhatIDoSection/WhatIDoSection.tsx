@@ -35,7 +35,7 @@ const WhatIDoSection = ({
                 className="relative group activity flex justify-end mb-5 sm:mb-6"
               >
                 <div className="flex items-end transition-transform duration-500 overflow-hidden sm:group-hover:-translate-x-[18rem]">
-                  <span className="text-xs pb-1 mr-1 text-color-primary/50 dark:text-white/50 transition-colors sm:dark:group-hover:text-white sm:text-[1.8rem] sm:group-hover:text-color-primary sm:mr-5 sm:pb-5 sm:text-color-primary/20 sm:dark:text-white/20">
+                  <span className="text-xs pb-1 mr-1 text-color-primary/50 dark:text-white/50 transition-colors sm:dark:group-hover:text-white sm:text-[1.8rem] sm:group-hover:text-color-primary sm:mr-5 sm:pb-8 sm:text-color-primary/30 sm:dark:text-white/30">
                     0{index + 1}.
                   </span>
                   <div className="">
