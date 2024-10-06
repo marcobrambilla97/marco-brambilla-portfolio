@@ -117,5 +117,20 @@ export const projectsPageQuery = graphql`
 export default ProjectsTemplate;
 
 export function Head({ pageContext }: { pageContext: IPageContext }) {
-  return <html lang={pageContext.currentLocale?.toLowerCase()} />;
+  console.log(pageContext.translations[0]);
+  return (
+    <>
+      <html lang={pageContext.currentLang?.toLowerCase()} />
+      <link
+        rel="alternate"
+        href={`https://marcobrambilladev.it${pageContext.currentUri}`}
+        hrefLang={pageContext.currentLang?.toLowerCase()}
+      />
+      <link
+        rel="alternate"
+        href={`https://marcobrambilladev.it${pageContext.translations[0].uri}`}
+        hrefLang={pageContext.translations[0].language.code?.toLowerCase()}
+      />
+    </>
+  );
 }
