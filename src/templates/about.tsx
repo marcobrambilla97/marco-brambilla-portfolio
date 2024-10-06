@@ -183,7 +183,6 @@ export const aboutPageQuery = graphql`
 export default AboutTemplate;
 
 export function Head({ pageContext }: { pageContext: IPageContext }) {
-  console.log(pageContext.translations[0]);
   return (
     <>
       <html lang={pageContext.currentLang?.toLowerCase()} />
