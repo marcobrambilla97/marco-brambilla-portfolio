@@ -178,7 +178,6 @@ export const homePageQuery = graphql`
 export default HomePageTemplate;
 
 export function Head({ pageContext }: { pageContext: IPageContext }) {
-  console.log(pageContext.translations[0]);
   return (
     <>
       <html lang={pageContext.currentLang?.toLowerCase()} />

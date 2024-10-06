@@ -117,7 +117,6 @@ export const projectsPageQuery = graphql`
 export default ProjectsTemplate;
 
 export function Head({ pageContext }: { pageContext: IPageContext }) {
-  console.log(pageContext.translations[0]);
   return (
     <>
       <html lang={pageContext.currentLang?.toLowerCase()} />
