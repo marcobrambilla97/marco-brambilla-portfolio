@@ -8,10 +8,10 @@ export interface IDesktopMenuProps {
 
 const DesktopMenu = ({ menuItems }: IDesktopMenuProps) => {
   return (
-    <nav aria-labelledby="mainmenulabel" className="mr-[8rem]" role="menu">
-      <span id="mainmenulabel" className="screen-reader-text">
+    <nav aria-label=" Main Menu" className="mr-[8rem]">
+      {/* <span id="mainmenulabel" className="screen-reader-text">
         Main Menu
-      </span>
+      </span> */}
       <MainMenu menuItems={menuItems} />
     </nav>
   );

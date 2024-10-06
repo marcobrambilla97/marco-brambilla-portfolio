@@ -16,7 +16,6 @@ const MainMenu = ({ menuItems, currentUri }: IMainMenuProps) => {
           className="text-left text-5xl sm:text-[1.7rem] max-sm:uppercase"
         >
           <Link
-            role="menuitem"
             id={menuItem.id}
             to={menuItem.uri}
             className={`block py-3 ${currentUri === menuItem.uri ? " sm:text-white sm:font-medium" : "max-sm:text-white/50"}`}
