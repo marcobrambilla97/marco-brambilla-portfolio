@@ -15,14 +15,13 @@ const MobileMenu = ({
 }: IMobileMenu) => {
   return (
     <div
-      aria-label="Menu"
       className={`fixed top-0 left-0 w-full h-[100dvh] bg-black/90 text-white backdrop-blur-md z-40 transition-all ease-out duration-700 ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"}`}
     >
       <div
         id="primary-menu"
         className="pt-24 px-6"
         aria-labelledby="menu-button"
-        role="menu"
+        aria-label="Menu"
       >
         <LanguageSwitcher
           currentUri={currentUri}
