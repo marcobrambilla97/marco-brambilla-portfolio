@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Heading from "../../../ui/Heading/Heading";
 import HomeMarquee from "../../../ui/Marquee/HomeMarquee/HomeMarquee";
 import { motion } from "framer-motion";
@@ -22,9 +22,10 @@ const HomePageTitleSection = ({
         {pageSubtitle && (
           <div className="overflow-hidden">
             <motion.div
-              initial={{ y: 100, skewY: 8 }}
-              animate={{ y: 0, skewY: 0 }}
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{
+                when: "beforeChildren",
                 duration: 1,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
