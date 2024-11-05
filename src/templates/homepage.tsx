@@ -191,6 +191,10 @@ export function Head({ pageContext }: { pageContext: IPageContext }) {
         href={`https://marcobrambilladev.it${pageContext.translations[0].uri}`}
         hrefLang={pageContext.translations[0].language.code?.toLowerCase()}
       />
+      <meta
+        name="google-site-verification"
+        content="irx0Ikx-Dh6LcLi2-Jz_le1TDDoh_swzmiVTX7Y6oms"
+      />
     </>
   );
 }
