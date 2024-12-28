@@ -27,7 +27,7 @@ const Header = ({
 }: IHeaderProps) => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     const savedMode = localStorage.getItem("darkMode");
-    return savedMode !== null ? JSON.parse(savedMode) : true;
+    return savedMode !== null ? JSON.parse(savedMode) : false;
   });
 
   const handleToggleDarkMode = () => {
