@@ -34,7 +34,7 @@
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-plugin-wpgraphql-seo": "^1.4.2",
     "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-source-wordpress": "^7.13.4",
+    "gatsby-source-wordpress": "^7.15.0",
     "gatsby-transformer-sharp": "^5.13.1",
     "lenis": "^1.1.1",
     "postcss": "^8.4.38",
