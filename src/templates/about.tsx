@@ -77,7 +77,6 @@ export const aboutPageQuery = graphql`
           skillsList {
             skillTitle
           }
-          skillDescription
         }
       }
     }

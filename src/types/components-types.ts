@@ -97,7 +97,6 @@ export interface IWpSkill {
   title: string;
   skillsGroup: {
     skillsList: IWpSkillTitle[];
-    skillDescription: string;
   };
 }
 

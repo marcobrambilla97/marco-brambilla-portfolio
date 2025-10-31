@@ -24,7 +24,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "https://www.marcobrambilladev-backend.it/graphql",
+        url: "https://marcobrambilladevtest.altervista.org/graphql",
       },
     },
     "gatsby-plugin-image",
@@ -87,7 +87,6 @@ const config: GatsbyConfig = {
         },
       },
     },
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {

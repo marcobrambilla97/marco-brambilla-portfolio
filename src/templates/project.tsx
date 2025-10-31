@@ -172,11 +172,13 @@ export function Head({ pageContext }: { pageContext: IPageContext }) {
         href={`https://marcobrambilladev.it${pageContext.currentUri}`}
         hrefLang={pageContext.currentLang?.toLowerCase()}
       />
-      <link
-        rel="alternate"
-        href={`https://marcobrambilladev.it${pageContext.translations[0].uri}`}
-        hrefLang={pageContext.translations[0].language.code?.toLowerCase()}
-      />
+      {pageContext.translations[0]?.uri && (
+        <link
+          rel="alternate"
+          href={`https://marcobrambilladev.it${pageContext.translations[0].uri}`}
+          hrefLang={pageContext.translations[0].language.code?.toLowerCase()}
+        />
+      )}
     </>
   );
 }

@@ -76,7 +76,12 @@ exports.createPages = async ({
     const isWpPortfolioPage = wpPage.__typename === "WpPortfolio";
 
     // Normalizza l'URI per rimuovere l'eventuale dominio
-    const normalizedUri = wpPage.uri.replace(/^https?:\/\/[^\/]+/, "");
+    const normalizedUri = wpPage.uri ? wpPage.uri.replace(/^https?:\/\/[^\/]+/, "") : "";
+
+    if (!wpPage.uri) {
+      console.warn(`Pagina senza URI trovata: ${wpPage.title} (ID: ${wpPage.databaseId})`);
+      return; // Salta questa iterazione se l'URI non è definito
+    }
 
     const context: IPageContext = {
       databaseId: wpPage.databaseId,
