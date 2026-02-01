@@ -27,24 +27,6 @@ const Layout = ({ pageContext, children }: LayoutProps) => {
   };
 
   useEffect(() => {
-    // #region agent log
-    fetch(
-      "http://127.0.0.1:7242/ingest/af243d97-e2e3-470f-995f-e37881052955",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          sessionId: "debug-session",
-          runId: "run1",
-          hypothesisId: "H2-layout",
-          location: "Layout.tsx:useEffect",
-          message: "Layout navigation",
-          data: { currentUri },
-          timestamp: Date.now(),
-        }),
-      },
-    ).catch(() => {});
-    // #endregion
     lenis?.scrollTo(0, { immediate: true });
     setIsMobileMenuOpen(false);
   }, [currentUri]);
