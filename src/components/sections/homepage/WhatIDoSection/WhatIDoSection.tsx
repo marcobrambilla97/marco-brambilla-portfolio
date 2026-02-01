@@ -11,7 +11,7 @@ interface IWhatIDoSectionProps {
   activities: IWpActivity[];
 }
 
-const MotionHeading = memo(motion(Heading));
+const MotionHeading = memo(motion.create(Heading));
 
 const WhatIDoSection = ({
   sectionTitle,

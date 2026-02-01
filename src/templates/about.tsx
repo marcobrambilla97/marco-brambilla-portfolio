@@ -4,7 +4,7 @@ import CommonSection from "../components/sections/CommonSection/CommonSection";
 import WhatIDoSection from "../components/sections/about/WhatIDoSection/WhatIDoSection";
 import SkillsSection from "../components/sections/about/SkillsSection/SkillsSection";
 import PageProjectsSection from "../components/sections/PageProjectsSection/PageProjectsSection";
-import Seo from "gatsby-plugin-wpgraphql-seo";
+import Seo from "../components/common/Seo/Seo";
 import { graphql } from "gatsby";
 import { IPageContext } from "../types/page-types";
 import { IWpAboutACFQuery } from "../types/queries-types";

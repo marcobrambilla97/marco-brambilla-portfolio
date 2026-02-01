@@ -10,7 +10,7 @@ const KeyPoints = ({
   keyPoints: IPortfolioProjectKeyPoint[];
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const MotionHeading = motion(Heading);
+  const MotionHeading = motion.create(Heading);
   const isInView = useInView(ref, { once: true });
 
   return (

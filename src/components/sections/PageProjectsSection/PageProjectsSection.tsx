@@ -13,7 +13,7 @@ interface IProjectsSection {
   projectsCount?: number;
 }
 
-const MotionHeading = memo(motion(Heading));
+const MotionHeading = memo(motion.create(Heading));
 
 const PageProjectsSection = ({
   projectsSectionTitle,

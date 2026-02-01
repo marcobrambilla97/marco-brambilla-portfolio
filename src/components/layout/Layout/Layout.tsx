@@ -4,10 +4,8 @@ import Header from "../../common/Header/Header";
 import Footer from "../../common/Footer/Footer";
 import Loader from "../../common/Loader/Loader";
 import { IPageContext } from "../../../types/page-types";
-import { SEOContext } from "gatsby-plugin-wpgraphql-seo";
 import { AnimatePresence } from "framer-motion";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
-import { graphql, useStaticQuery } from "gatsby";
 
 interface LayoutProps {
   pageContext: IPageContext;
@@ -15,83 +13,6 @@ interface LayoutProps {
 }
 
 const Layout = ({ pageContext, children }: LayoutProps) => {
-  const {
-    wp: { seo },
-  } = useStaticQuery(graphql`
-    query SiteInfoQuery {
-      wp {
-        seo {
-          contentTypes {
-            post {
-              title
-              schemaType
-              metaRobotsNoindex
-              metaDesc
-            }
-            page {
-              metaDesc
-              metaRobotsNoindex
-              schemaType
-              title
-            }
-          }
-          webmaster {
-            googleVerify
-            yandexVerify
-            msVerify
-            baiduVerify
-          }
-          schema {
-            companyName
-            personName
-            companyOrPerson
-            wordpressSiteName
-            siteUrl
-            siteName
-            inLanguage
-            logo {
-              sourceUrl
-              mediaItemUrl
-              altText
-            }
-          }
-          social {
-            facebook {
-              url
-              defaultImage {
-                sourceUrl
-                mediaItemUrl
-              }
-            }
-            instagram {
-              url
-            }
-            linkedIn {
-              url
-            }
-            mySpace {
-              url
-            }
-            pinterest {
-              url
-              metaTag
-            }
-            twitter {
-              username
-              cardType
-            }
-            wikipedia {
-              url
-            }
-            youTube {
-              url
-            }
-          }
-        }
-      }
-    }
-  `);
-
   const { currentUri, currentLang, translations } = pageContext;
   const lenis = useLenis();
 
@@ -106,34 +27,50 @@ const Layout = ({ pageContext, children }: LayoutProps) => {
   };
 
   useEffect(() => {
+    // #region agent log
+    fetch(
+      "http://127.0.0.1:7242/ingest/af243d97-e2e3-470f-995f-e37881052955",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          sessionId: "debug-session",
+          runId: "run1",
+          hypothesisId: "H2-layout",
+          location: "Layout.tsx:useEffect",
+          message: "Layout navigation",
+          data: { currentUri },
+          timestamp: Date.now(),
+        }),
+      },
+    ).catch(() => {});
+    // #endregion
     lenis?.scrollTo(0, { immediate: true });
     setIsMobileMenuOpen(false);
   }, [currentUri]);
 
   return (
-    <SEOContext.Provider value={{ global: seo }}>
-      <ReactLenis root>
-        <Header
-          currentUri={currentUri}
-          currentLang={currentLang}
-          translations={translations}
-          isMobileMenuOpen={isMobileMenuOpen}
-          callbackMobileMenuToggleClick={handleMobileMenuToggleClick}
-        />
-        <AnimatePresence mode="wait" key={currentUri}>
-          <Wrapper
-            wrapperTag="main"
-            className="relative z-20 bg-[#f2f2f2] pb-24 dark:bg-black sm:mb-[70vh] sm:pb-64"
-          >
-            <Loader>{children}</Loader>
-          </Wrapper>
-        </AnimatePresence>
-        <Footer
-          currentLang={currentLang || "IT"}
-          onBackToTopClick={handleBackToTopClick}
-        />
-      </ReactLenis>
-    </SEOContext.Provider>
+    <ReactLenis root>
+      <Header
+        currentUri={currentUri}
+        currentLang={currentLang}
+        translations={translations}
+        isMobileMenuOpen={isMobileMenuOpen}
+        callbackMobileMenuToggleClick={handleMobileMenuToggleClick}
+      />
+      <AnimatePresence mode="wait" key={currentUri}>
+        <Wrapper
+          wrapperTag="main"
+          className="relative z-20 bg-[#f2f2f2] pb-24 dark:bg-black sm:mb-[70vh] sm:pb-64"
+        >
+          <Loader>{children}</Loader>
+        </Wrapper>
+      </AnimatePresence>
+      <Footer
+        currentLang={currentLang || "IT"}
+        onBackToTopClick={handleBackToTopClick}
+      />
+    </ReactLenis>
   );
 };
 

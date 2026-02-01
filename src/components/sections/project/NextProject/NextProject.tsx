@@ -14,7 +14,7 @@ const NextProject = ({ nextProject, currentLang }: INextProjectProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const project = nextProject[0];
   const isInView = useInView(ref, { once: true });
-  const MotionHeading = motion(Heading);
+  const MotionHeading = motion.create(Heading);
 
   return (
     <section ref={ref}>

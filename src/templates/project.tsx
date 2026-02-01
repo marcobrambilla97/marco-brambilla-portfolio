@@ -3,7 +3,7 @@ import PageTitleSection from "../components/sections/PageTitleSection/PageTitleS
 import CommonSection from "../components/sections/CommonSection/CommonSection";
 import ScreensSection from "../components/sections/project/ScreensSection/ScreensSection";
 import NextProject from "../components/sections/project/NextProject/NextProject";
-import Seo from "gatsby-plugin-wpgraphql-seo";
+import Seo from "../components/common/Seo/Seo";
 import { graphql } from "gatsby";
 import { IWpProjectACFQuery } from "../types/queries-types";
 import { IPageContext } from "../types/page-types";

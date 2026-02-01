@@ -63,7 +63,7 @@ const Footer = ({ currentLang, onBackToTopClick }: IFooterProps) => {
     // },
     {
       id: 2,
-      menuLabel: "Socials",
+      menuLabel: "Social",
       socialItems: siteGlobalData.socials,
       isSocialMenu: true,
     },

@@ -9,7 +9,7 @@ interface IntroSectionProps {
 
 const IntroSection = ({ title, description }: IntroSectionProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const MotionHeading = motion(Heading);
+  const MotionHeading = motion.create(Heading);
   const isInView = useInView(ref, { once: true });
   return (
     <div className="mb-16 sm:w-1/4 sm:mb-0" ref={ref}>

@@ -3,7 +3,7 @@ import PageTitleSection from "../components/sections/PageTitleSection/PageTitleS
 import ProjectsSwitch from "../components/ui/ProjectsSwitch/ProjectsSwitch";
 import ProjectsGrid from "../components/sections/projects/ProjectsGrid/ProjectsGrid";
 import ProjectsList from "../components/sections/projects/ProjectsList/ProjectsList";
-import Seo from "gatsby-plugin-wpgraphql-seo";
+import Seo from "../components/common/Seo/Seo";
 import { graphql } from "gatsby";
 import { IWpProjectsACFQuery } from "../types/queries-types";
 import { useProjectsCountQuery } from "../hooks/useProjectsCountQuery";
